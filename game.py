@@ -61,7 +61,7 @@ def create_next_table(rows, cols, table, next_table):
     for row in range(rows):
         for col in range(cols):
             live_neighbors = count_live_neighborns(row, col, rows, cols, table)
-            if live_neighbors <= 2 or live_neighbors > 3:
+            if live_neighbors < 2 or live_neighbors > 3:
                 next_table[row][col] = 0
             elif live_neighbors == 3 and table[row][col] == 0:
                 next_table[row][col] = 1
